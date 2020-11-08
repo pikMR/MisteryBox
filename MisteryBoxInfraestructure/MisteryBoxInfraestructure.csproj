@@ -60,10 +60,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\CreateFakeElements.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\Data\Cocina.cs" />
-    <Compile Include="Models\Data\Item.cs" />
-    <Compile Include="Models\Data\Ropa.cs" />
-    <Compile Include="Models\Data\Tecnologia.cs" />
+    <Compile Include="Models\Data\CocinaRepository.cs" />
+    <Compile Include="Models\Data\EfRepository.cs" />
+    <Compile Include="Models\Data\RopaRepository.cs" />
+    <Compile Include="Models\Data\TecnologiaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +74,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MisteryBoxDomain\MisteryBoxDomain.csproj">
+      <Project>{bf0340ce-a94a-417b-8b58-33687554e2b5}</Project>
+      <Name>MisteryBoxDomain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

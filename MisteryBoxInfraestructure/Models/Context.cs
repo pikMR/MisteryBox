@@ -1,8 +1,8 @@
 ﻿using MisteryBoxInfraestructure.Migrations;
-using MisteryBoxInfraestructure.Models.Data;
+using MisteryBoxDomain.Entities;
 using System.Data.Entity;
 
-namespace MisteryBoxInfraestructure.Models
+namespace MisteryBoxInfraestructure.Data
 {
     public class Context : DbContext
     {
