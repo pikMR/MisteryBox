@@ -50,6 +50,10 @@
     <Compile Include="Interfaces\IRopaRepository.cs" />
     <Compile Include="Interfaces\ITecnologiaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IServiceTecnologia.cs" />
+    <Compile Include="Services\IServiceRopa.cs" />
+    <Compile Include="Services\IServiceCocina.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
