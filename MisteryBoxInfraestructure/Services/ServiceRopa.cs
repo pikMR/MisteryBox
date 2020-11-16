@@ -7,7 +7,7 @@ using MisteryBoxDomain.Services;
 
 namespace MisteryBoxInfraestructure.Services
 {
-    class ServiceRopa : IServiceRopa
+    public class ServiceRopa : IServiceRopa
     {
         public Task Add(Ropa entity)
         {

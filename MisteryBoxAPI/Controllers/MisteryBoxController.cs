@@ -18,6 +18,7 @@ namespace MisteryBoxAPI.Controllers
             _tecnologiaService = tecnologiaService;
         }
 
+        [HttpGet]
         public async Task<IHttpActionResult> ObtenerCajaMisteriosa()
         {
             return Ok();
