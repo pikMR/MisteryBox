@@ -7,6 +7,7 @@ namespace MisteryBoxInfraestructure.Migrations
     {
         public Configuration()
         {
+            //CreateFakeElements.CreateFakesInDB(); -> uncomment for create database with mock elements
             AutomaticMigrationsEnabled = false;
         }
 
