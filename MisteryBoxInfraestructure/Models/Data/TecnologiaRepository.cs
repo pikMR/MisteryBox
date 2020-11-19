@@ -12,6 +12,5 @@ namespace MisteryBoxInfraestructure.Models.Data
     public class TecnologiaRepository : EfRepository<Tecnologia>, ITecnologiaRepository
     {
         public TecnologiaRepository(Context context) : base(context) { }
-        public Task<IEnumerable<Tecnologia>> GetAllTecnologias() => GetAll();
     }
 }

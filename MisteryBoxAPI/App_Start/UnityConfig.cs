@@ -1,4 +1,6 @@
+using MisteryBoxDomain.Interfaces;
 using MisteryBoxDomain.Services;
+using MisteryBoxInfraestructure.Models.Data;
 using MisteryBoxInfraestructure.Services;
 using System.Web.Http;
 using Unity;
@@ -17,6 +19,9 @@ namespace MisteryBoxAPI
             container.RegisterType<IServiceCocina, ServiceCocina>();
             container.RegisterType<IServiceRopa, ServiceRopa>();
             container.RegisterType<IServiceTecnologia, ServiceTecnologia>();
+            container.RegisterType<ICocinaRepository, CocinaRepository>();
+            container.RegisterType<IRopaRepository, RopaRepository>();
+            container.RegisterType<ITecnologiaRepository, TecnologiaRepository>();
             // e.g. container.RegisterType<ITestService, TestService>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);

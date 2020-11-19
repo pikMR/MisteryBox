@@ -7,6 +7,6 @@ namespace MisteryBoxDomain.Interfaces
 {
     public interface IRopaRepository :IAsyncRepository<Ropa>
     {
-        Task<IEnumerable<Ropa>> GetAllRopas();
+        //Task<IEnumerable<Ropa>> GetAllRopas();
     }
 }

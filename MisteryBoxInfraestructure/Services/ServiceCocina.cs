@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using MisteryBoxDomain.Entities;
+using MisteryBoxDomain.Interfaces;
 using MisteryBoxDomain.Services;
 
 namespace MisteryBoxInfraestructure.Services
 {
     public class ServiceCocina : IServiceCocina
     {
+        ICocinaRepository _repository;
+        public ServiceCocina(ICocinaRepository repository)
+        {
+            _repository = repository;
+        }
+
         public Task Add(Cocina entity)
         {
             throw new NotImplementedException();
@@ -31,17 +38,12 @@ namespace MisteryBoxInfraestructure.Services
 
         public Task<IEnumerable<Cocina>> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Cocina>> GetAllCocinas()
-        {
-            throw new NotImplementedException();
+            return _repository.GetAll();
         }
 
         public Task<Cocina> GetById(int id)
         {
-            throw new NotImplementedException();
+            return _repository.GetById(id);
         }
 
         public Task<IEnumerable<Cocina>> GetWhere(Expression<Func<Cocina, bool>> predicate)

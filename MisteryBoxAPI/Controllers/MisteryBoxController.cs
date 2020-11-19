@@ -1,6 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
+using MisteryBoxDomain.Entities;
 using MisteryBoxDomain.Services;
+using System.Linq;
+using System;
 
 namespace MisteryBoxAPI.Controllers
 {
@@ -21,7 +25,32 @@ namespace MisteryBoxAPI.Controllers
         [HttpGet]
         public async Task<IHttpActionResult> ObtenerCajaMisteriosa()
         {
-            return Ok();
+            //var _single = await _cocinaService.GetById(1);
+            var dataCocina = _cocinaService.GetAll();
+            var dataRopa = _ropaService.GetAll();
+            var dataTecn = _tecnologiaService.GetAll();
+            await Task.WhenAll(dataCocina, dataRopa, dataTecn);
+            List<Item> lista = new List<Item>();
+
+            lista.AddRange(dataCocina.Result);
+            lista.AddRange(dataRopa.Result);
+            lista.AddRange(dataTecn.Result);
+            return Ok(lista.OrderBy(x => Guid.NewGuid()).ToList());
         }
+
+        public async Task<IHttpActionResult> ObtenerCajaMisteriosaV1()
+        {
+            var dataCocina = _cocinaService.GetAll();
+            var dataRopa = _ropaService.GetAll();
+            var dataTecn = _tecnologiaService.GetAll();
+            await Task.WhenAll(dataCocina, dataRopa, dataTecn);
+            List<Item> lista = new List<Item>();
+
+            lista.AddRange(dataCocina.Result);
+            lista.AddRange(dataRopa.Result);
+            lista.AddRange(dataTecn.Result);
+            return Ok(lista.OrderBy(x => Guid.NewGuid()).ToList());
+        }
+
     }
 }

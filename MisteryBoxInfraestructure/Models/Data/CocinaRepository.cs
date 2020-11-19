@@ -12,6 +12,5 @@ namespace MisteryBoxInfraestructure.Models.Data
     public class CocinaRepository : EfRepository<Cocina>, ICocinaRepository
     {
         public CocinaRepository(Context context) : base(context) { }
-        public Task<IEnumerable<Cocina>> GetAllCocinas() => GetAll();
     }
 }

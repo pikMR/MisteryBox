@@ -6,6 +6,6 @@ namespace MisteryBoxDomain.Interfaces
 {
     public interface ITecnologiaRepository : IAsyncRepository<Tecnologia>
     {
-        Task<IEnumerable<Tecnologia>> GetAllTecnologias();
+        //Task<IEnumerable<Tecnologia>> GetAllTecnologias();
     }
 }

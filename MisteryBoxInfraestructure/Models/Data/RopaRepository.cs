@@ -12,6 +12,5 @@ namespace MisteryBoxInfraestructure.Models.Data
     public class RopaRepository : EfRepository<Ropa>, IRopaRepository
     {
         public RopaRepository(Context context) : base(context) { }
-        public Task<IEnumerable<Ropa>> GetAllRopas() => GetAll();
     }
 }

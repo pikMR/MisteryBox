@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using MisteryBoxDomain.Entities;
+using MisteryBoxDomain.Interfaces;
 using MisteryBoxDomain.Services;
 
 namespace MisteryBoxInfraestructure.Services
 {
     public class ServiceRopa : IServiceRopa
     {
+        IRopaRepository _repository;
+        public ServiceRopa(IRopaRepository repository)
+        {
+            _repository = repository;
+        }
+
         public Task Add(Ropa entity)
         {
             throw new NotImplementedException();
@@ -31,12 +38,7 @@ namespace MisteryBoxInfraestructure.Services
 
         public Task<IEnumerable<Ropa>> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Ropa>> GetAllRopas()
-        {
-            throw new NotImplementedException();
+            return _repository.GetAll();
         }
 
         public Task<Ropa> GetById(int id)

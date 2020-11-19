@@ -8,10 +8,15 @@ namespace MisteryBoxInfraestructure.Data
     {
         public Context() : base("Context")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>());
         }
         public DbSet<Tecnologia> Tecnologias { get; set; }
         public DbSet<Cocina> Cocinas { get; set; }
         public DbSet<Ropa> Ropas { get; set; }
+
+        public void MigrateElements()
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>());
+        }
     }
 }

@@ -7,6 +7,6 @@ namespace MisteryBoxDomain.Interfaces
 {
     public interface ICocinaRepository : IAsyncRepository<Cocina>
     {
-        Task<IEnumerable<Cocina>> GetAllCocinas();
+        //Task<IEnumerable<Cocina>> GetAllCocinas();
     }
 }
