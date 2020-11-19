@@ -67,7 +67,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ServiceCocina.cs" />
     <Compile Include="Services\ServiceRopa.cs" />
-    <Compile Include="Services\ServiceSwap.cs" />
     <Compile Include="Services\ServiceTecnologia.cs" />
   </ItemGroup>
   <ItemGroup>
